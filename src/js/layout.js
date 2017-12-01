@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 //import {getAnnouncements} from './actions/display';
 import TopNav from './containers/top_nav';
+import Header from './components/header';
 import Footer from './components/footer';
 
 
@@ -26,8 +27,11 @@ class Layout extends Component {
 	render() {
 		return (
 			<div>
+				<Header />
 				<TopNav />
+				<div className="container">
 					{this.props.children}
+				</div>
 				<Footer />
 			</div>
 		);

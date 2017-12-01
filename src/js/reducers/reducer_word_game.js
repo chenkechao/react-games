@@ -7,7 +7,7 @@ import {
 
 
 const INITIAL_STATE = {
-	//game_mode: null
+	letters: null
 };
 
 

@@ -1,40 +1,60 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {ButtonToolbar} from 'react-bootstrap';
 import FrontPageComponent from '../components/front_page';
 import {setGameMode} from '../actions/display';
+import {_createLargeButton} from '../common';
 import {WORD_MODE} from '../vars';
 
 
 class FrontPageContainer extends Component {
 	render() {
 		const wordButtonClickFunc = () => {
-			console.log("set game mode");
 			this.props.setGameMode(WORD_MODE);
 		};
-		const wordButtonElement = <button onClick={wordButtonClickFunc}>Word Game</button>;
+		const wordButtonElement = this.props.createGameButton({
+			text: "Word Game",
+			onClickFunc: wordButtonClickFunc
+		});
 
-		const otherButtonElement = <button>Coming Soon!</button>;
+		const otherButtonElement = this.props.createGameButton({
+			text: "Coming Soon!",
+			onClickFunc: () => {}
+		});
+
+		const gameButtonElement = (
+			<ButtonToolbar>
+				{wordButtonElement}
+				{otherButtonElement}
+			</ButtonToolbar>
+		);
 
 		return (
 			<FrontPageComponent
-				wordButtonElement={wordButtonElement}
-				otherButtonElement={otherButtonElement}
+				gameButtonElement={gameButtonElement}
 			/>
 		);
 	}
 }
 
 FrontPageContainer.propTypes = {
-	setGameMode: PropTypes.func.isRequired
+	setGameMode: PropTypes.func.isRequired,
+	createGameButton: PropTypes.func.isRequired
 };
 
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
 	return {};
 }
 const mapDispatchToProps = {
 	setGameMode
 };
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+	...stateProps,
+	...dispatchProps,
+	...ownProps,
+	createGameButton: _createLargeButton
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(FrontPageContainer);
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(FrontPageContainer);

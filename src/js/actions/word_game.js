@@ -1,17 +1,15 @@
 //import axios from 'axios';
 //import qs from 'qs';
 
-// my naming convention for reducer actions is to start the action name with the name of the file
-// this helps prevent action collisions
-export const SET_GAME_MODE = 'DISPLAY_HIDE_ALL_MODALS';
+export const ADD_LETTER = 'WORD_GAME_ADD_LETTER';
 
 
-export function setGameMode(payload) {
+/*export function setGameMode(payload) {
 	return {
 		type: SET_GAME_MODE,
 		payload
 	};
-}
+}*/
 
 
 /*export function getOrgTypes(user_id, user_access_token) {

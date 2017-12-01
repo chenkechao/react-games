@@ -4,21 +4,19 @@ import PropTypes from 'prop-types';
 
 class FrontPageComponent extends Component {
 	render() {
-		const {wordButtonElement, otherButtonElement} = this.props;
+		const {gameButtonElement} = this.props;
 		return (
 			<div>
 				<h1>Welcome!</h1>
 				<p>To get started, pick a game below.</p>
-				{wordButtonElement}
-				{otherButtonElement}
+				{gameButtonElement}
 			</div>
 		);
 	}
 }
 
 FrontPageComponent.propTypes = {
-	wordButtonElement: PropTypes.element.isRequired,
-	otherButtonElement: PropTypes.element.isRequired
+	gameButtonElement: PropTypes.element.isRequired
 };
 
 export default FrontPageComponent;

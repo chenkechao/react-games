@@ -6,9 +6,11 @@ import {connect} from 'react-redux';
 export class Footer extends Component {
 	render() {
 		return (
-			<footer>
-				<div>
-					Written in 2017 by Dexter Richards
+			<footer className="navbar-fixed-bottom">
+				<div className="container">
+					<div className="row">
+						<p>See the code on <a href="https://github.com/ken92/react-games" target="_blank">GitHub!</a></p>
+					</div>
 				</div>
 			</footer>
 		);

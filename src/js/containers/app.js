@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 //import cookie from 'react-cookie';
 //import Script from 'react-load-script';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import Layout from '../layout';
 import PageContents from './page_contents';
