@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-//import {getAnnouncements} from './actions/display';
 import TopNav from './containers/top_nav';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -23,7 +22,7 @@ import Footer from './components/footer';
 }*/
 
 
-class Layout extends Component {
+export class Layout extends Component {
 	render() {
 		return (
 			<div>

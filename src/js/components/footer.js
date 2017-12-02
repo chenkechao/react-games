@@ -9,7 +9,7 @@ export class Footer extends Component {
 			<footer className="navbar-fixed-bottom">
 				<div className="container">
 					<div className="row">
-						<p>See the code on <a href="https://github.com/ken92/react-games" target="_blank">GitHub!</a></p>
+						<p>See the code on <a href="https://github.com/ken92/react-games" target="_blank" rel="noopener noreferrer">GitHub!</a></p>
 					</div>
 				</div>
 			</footer>

@@ -1,5 +1,8 @@
 import {
-	
+	ADD_LETTER,
+	CLEAR_LETTERS,
+
+	SET_GAME_RUNNING
 } from '../actions/word_game';
 import {
 	getSimpleSetState
@@ -7,12 +10,13 @@ import {
 
 
 const INITIAL_STATE = {
-	letters: null
+	letters: null,
+	game_running: false
 };
 
 
 var simpleSets = {};
-//simpleSets[SET_GAME_MODE] = 'game_mode';
+simpleSets[SET_GAME_RUNNING] = 'game_running';
 
 
 export default function(state = INITIAL_STATE, action) {
@@ -22,6 +26,18 @@ export default function(state = INITIAL_STATE, action) {
 		return getSimpleSetState(simpleSets, action, state);
 
 	switch (actionType) {
+		case ADD_LETTER:
+			var newState = {...state};
+			var newLetters = newState.letters? [...newState.letters] : [];
+			newLetters.push(action.payload);
+			newState.letters = newLetters;
+			return newState;
+
+		case CLEAR_LETTERS:
+			newState = {...state};
+			newState.letters = null;
+			return newState;
+
 		default:
 			return state;
 	}

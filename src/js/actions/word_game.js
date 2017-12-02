@@ -1,22 +1,33 @@
-//import axios from 'axios';
-//import qs from 'qs';
-
 export const ADD_LETTER = 'WORD_GAME_ADD_LETTER';
+export const CLEAR_LETTERS = 'WORD_GAME_CLEAR_LETTERS';
+
+export const SET_GAME_RUNNING = 'WORD_GAME_SET_GAME_RUNNING';
+
+export const SET_SECONDS = 'WORD_GAME_SET_SECONDS';
 
 
-/*export function setGameMode(payload) {
+export function addLetter(letter) {
 	return {
-		type: SET_GAME_MODE,
-		payload
+		type: ADD_LETTER,
+		payload: letter
 	};
-}*/
-
-
-/*export function getOrgTypes(user_id, user_access_token) {
-	const values = {user_id, user_access_token};
-	const request = axios.post(`${API_URL}?action=getOrgTypeList`, qs.stringify(values));
+}
+export function clearLetters() {
 	return {
-		type: GET_ORG_TYPES,
-		payload: request
+		type: CLEAR_LETTERS
 	};
-}*/
+}
+
+
+export function startGame() {
+	return {
+		type: SET_GAME_RUNNING,
+		payload: true
+	};
+}
+export function stopGame() {
+	return {
+		type: SET_GAME_RUNNING,
+		payload: false
+	};
+}

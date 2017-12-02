@@ -6,7 +6,9 @@ export class Header extends Component {
 	render() {
 		return (
 			<PageHeader>
-				React Games <small>by Dexter Richards</small>
+				<div className="container">
+					React Games <small>by Dexter Richards</small>
+				</div>
 			</PageHeader>
 		);
 	}

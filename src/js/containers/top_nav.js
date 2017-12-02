@@ -58,7 +58,7 @@ export class TopNav extends Component {
 }
 
 TopNav.propTypes = {
-	game_mode: PropTypes.string.isRequired,
+	game_mode: PropTypes.string,
 	setGameMode: PropTypes.func.isRequired
 };
 TopNav.defaultProps = {
